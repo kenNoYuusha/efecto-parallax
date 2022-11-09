@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax</title>
+    <style>
+        *,*::before,*::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            font-size: 62.5%;
+        }
+        img {
+            width: 100%;
+        }
+        .parallax{
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            perspective: 8px;
+            overflow-x: hidden;
+            overflow-y: scroll;
+        }
+        .parallax__background {
+            position: absolute;
+            left: 0; right: 0;
+            margin: 0 auto;
+            width: 100%;
+            transform: translateZ(0) scale(1);
+        }
+        .parallax__middleground {
+            position: absolute;
+            left: 0; right: 0;
+            margin: 0 auto;
+            width: 100%;
+            transform: translateZ(-2px) scale(1.10);
+        }
+        .parallax__foreground {
+            position: absolute;
+            left: 0; right: 0;
+            margin: 0 auto;
+            width: 100%;
+            transform: translateZ(2px) scale(.55);
+        }
+    </style>
+</head>
+<body>
+    <div class="parallax">
+        <div class="parallax__background">
+            <img src="./FondoAlicia.png" alt="fondo">
+        </div>
+        <div class="parallax__middleground">
+            <img src="./lluvia.png" alt="lluvia">
+        </div>
+        <div class="parallax__foreground">
+            <img src="./Alice.png" alt="alicia">
+        </div>
+    </div>
+</body>
+</html>
